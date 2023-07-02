@@ -1,0 +1,382 @@
+/*import rtl and ltr style css  file */
+/*import font family */
+@import url(https:/*fonts.googleapis.com/css?family=Halant:400,500,300,600,700|Josefin+Sans:400,100italic,100,300,300italic,400italic,600,600italic,700|Playfair+Display:400,400italic,700,700italic,900,900italic);
+/*start fixed variable's*/
+.body_section .lang_content button {
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+}
+.body_section .lang_content button a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/*mixin for transition*/
+/*mixin for border radius*/
+/*this style for scrollbar*/
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  border: 1px solid #427bff;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #427bff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  scroll-behavior: smooth;
+  height: 2000px;
+}
+
+/*
+
+____________________________
+___________________________
+_______________________
+___________________\__________
+*/
+body .nav_container {
+  background-color: red !important;
+}
+
+/* start nav_Section style*/
+#nav_Section .nav_container {
+  transition: all 0.3s ease-in-out;
+  width: 70px;
+  overflow: hidden;
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 6px 2px 10px 0px, rgba(0, 0, 0, 0.2) -6px -2px 10px 0px;
+}
+#nav_Section .nav_container:hover {
+  width: 220px;
+}
+#nav_Section .nav_container:hover .time {
+  opacity: 1;
+}
+#nav_Section .nav_container:hover ul {
+  margin-left: calc(50% - 60px);
+}
+#nav_Section .nav_container:hover .toggle_text {
+  opacity: 1;
+}
+#nav_Section .nav_container:hover .logo {
+  margin: 0;
+}
+#nav_Section svg.logo {
+  font-size: 42px;
+  margin-left: 35px;
+}
+#nav_Section .top_ul_info {
+  display: grid;
+  place-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-self: normal;
+  padding: 20px 0;
+  transition: all 0.3s ease-in-out;
+}
+#nav_Section .top_ul_info span {
+  font-size: 14px;
+  background-color: #427bff;
+  padding: 3px;
+  border-radius: 7px;
+}
+#nav_Section .time {
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  opacity: 0;
+}
+#nav_Section .fa-sort-down {
+  margin: -6px 0 0 5px;
+  font-size: 11px;
+}
+#nav_Section ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: calc(50% - 30px);
+}
+#nav_Section ul span {
+  margin: 0 15px;
+}
+#nav_Section ul span.toggle_text {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+#nav_Section li {
+  margin: 8px 0;
+  padding: 15px 10px;
+  transition: all 0.2s ease-in-out;
+  border-left: double #ffffff;
+}
+#nav_Section li:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-left: double;
+  border-left: double #427bff;
+}
+#nav_Section a {
+  cursor: pointer;
+  color: #464343;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+#nav_Section svg {
+  font-size: 21px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.body_section {
+  margin-left: 100px;
+}
+.body_section .top_lang_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: rgba(70, 67, 67, 0.09);
+  /* start media for xx small screen*/
+}
+@media (max-width: 400px) {
+  .body_section .top_lang_info {
+    margin: 10px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.body_section span {
+  color: rgba(70, 67, 67, 0.9);
+  text-transform: capitalize;
+  margin: 0 0 10px 0;
+}
+.body_section .lang_content button {
+  border: 1px solid rgba(70, 67, 67, 0.2);
+  border-radius: 3px;
+}
+.body_section .lang_content .active {
+  background-color: #427bff;
+}
+.body_section .lang_content .active a {
+  color: #ffffff !important;
+}
+.body_section .lang_content a {
+  color: #464343 !important;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.body_section .light_style {
+  height: 1px;
+  background-color: rgba(70, 67, 67, 0.02);
+}
+.body_section .top_info {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.body_section h2 {
+  font-size: 19px;
+  text-transform: capitalize;
+  /* start media for xx small screen*/
+}
+@media (max-width: 400px) {
+  .body_section h2 {
+    font-size: 16px;
+  }
+}
+.body_section svg.fa-xmark {
+  position: absolute;
+  right: 20px;
+  font-size: 19px;
+  cursor: pointer;
+}
+.body_section .row_top_input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 40px 0 0 0;
+  /* start media for xx small screen 320 to 767px*/
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .body_section .row_top_input {
+    display: block;
+  }
+}
+.body_section .row_bottom_input {
+  display: flex;
+  justify-content: flex-start;
+  /* start media for xx small screen 320 to 767px*/
+  margin: 30px 0 0 0;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .body_section .row_bottom_input {
+    display: block;
+  }
+}
+.body_section .row_bottom_input .second {
+  margin: 0 0 0 40px;
+  /* start media for xx small screen 320 to 767px*/
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .body_section .row_bottom_input .second {
+    margin: 0;
+  }
+}
+.body_section .row_bottom_input fieldset {
+  width: 40%;
+  /* start media for xx small screen 320 to 767px*/
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .body_section .row_bottom_input fieldset {
+    width: 80%;
+  }
+}
+.body_section fieldset {
+  width: 50%;
+  /* start media for xx small screen 320 to 767px*/
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .body_section fieldset {
+    width: 80%;
+  }
+}
+.body_section legend {
+  padding: 8px;
+}
+.body_section input.sub_inpu {
+  border: 2px solid transparent;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  outline: none;
+  text-transform: capitalize;
+  /*add border color to input within focus or active*/
+}
+.body_section input.sub_inpu:focus, .body_section input.sub_inpu:active {
+  border: 2px solid rgba(66, 123, 255, 0.7);
+}
+.body_section .check_box {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin: 0 0 0 40px;
+  text-transform: capitalize;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .body_section .check_box {
+    display: block;
+    margin: 10px auto;
+    font-size: 11px;
+  }
+}
+.body_section .radio {
+  margin: 0 10px;
+  cursor: pointer;
+}
+.body_section .state {
+  margin: 0 10px 0 0;
+}
+.body_section input.submit_btn {
+  margin: 50px 0;
+  padding: 10px 15px;
+  border: none;
+  background-color: rgba(66, 123, 255, 0.7);
+  color: #ffffff;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.body_section input.submit_btn:hover {
+  background-color: #427bff;
+}
+
+.previous_cycle h3 {
+  margin: 0 0 20px 0;
+}
+.previous_cycle hr {
+  height: 1px;
+  margin: 20px 0;
+}
+
+.tableFixHead {
+  overflow-y: auto;
+  height: 200px;
+  /* width: calc(100% - 70px); */
+}
+
+.tableFixHead thead th {
+  position: sticky;
+  top: 0px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background: #eee;
+}
+
+/* scroll to top button */
+.scroll_to_top {
+  position: fixed !important;
+  cursor: pointer;
+  opacity: 0;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10;
+  width: 40px;
+  padding: 10px;
+  background: #427bff;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #ffffff;
+}
+.scroll_to_top a {
+  font-size: 17px;
+}
+.scroll_to_top svg {
+  color: #ffffff;
+}/*# sourceMappingURL=main.css.map */

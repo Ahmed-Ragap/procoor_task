@@ -1,0 +1,469 @@
+/*import rtl and ltr style css  file */
+// @import './ltr_style';
+// @import './rtl_style';
+
+/*import font family */
+@import url(https:/*fonts.googleapis.com/css?family=Halant:400,500,300,600,700|Josefin+Sans:400,100italic,100,300,300italic,400italic,600,600italic,700|Playfair+Display:400,400italic,700,700italic,900,900italic);
+/*start fixed variable's*/
+ $font-title: 'Josefin Sans', sans-serif;
+ $font-paragraph: 'Halant', serif;
+ $pry: #427bff;
+ $p-color: #464343;
+ $h-color: #ffffff;
+ $m-font: 16px;  
+ 
+
+ %button{ 
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+   a{
+       text-decoration: none;
+       text-transform: capitalize;
+       color: $h-color;
+       font-weight: bold;
+       
+   }
+
+ 
+ }
+ /*mixin for transition*/
+ @mixin transition($t){
+    -webkit-transition:all $t ease-in-out;
+    -moz-transition: all $t ease-in-out;
+    -ms-transition:all $t ease-in-out;
+    -o-transition:all $t ease-in-out;
+    transition:all $t ease-in-out; 
+ }
+  /*mixin for border radius*/
+ @mixin border-r($b){
+    -webkit-border-radius:$b;
+    -moz-border-radius:$b;
+    -ms-border-radius:$b;
+    -o-border-radius:$b;
+    border-radius:$b;  
+ }
+ 
+ /*this style for scrollbar*/
+ ::-webkit-scrollbar { 
+   width: 7px;
+ }
+ ::-webkit-scrollbar-track {
+    border: 1px solid $pry;   
+   background-color: transparent;
+ }
+ ::-webkit-scrollbar-thumb {
+   background: $pry;      
+ }
+ ::-webkit-scrollbar-thumb:hover {
+
+   @include transition(1s);
+ }
+*{
+  margin: 0; 
+    padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+ body{
+font-family: $font-title;
+scroll-behavior: smooth;
+height: 2000px; 
+ }
+
+
+
+/*
+
+____________________________
+___________________________
+_______________________
+___________________\__________
+*/
+
+$dir: 'ltr';
+
+body{
+  @if $dir == "ltr"{
+ 
+    .nav_container{
+background-color: red !important;
+    }
+   
+
+
+
+  } @else { 
+   
+    .nav_container{ 
+      right: 0!important;  
+       background-color: #427bff !important;
+     
+    }
+    ul{
+      justify-content: baseline!important;
+    }
+    svg.logo {
+      margin-left: -50px!important;
+  }
+    svg.fa-xmark{
+  
+      left: 0!important;
+ }
+ .top_info {
+  flex-direction: row-reverse!important;
+  
+  }
+  }
+}
+
+/* start nav_Section style*/
+
+#nav_Section{
+
+  .nav_container{
+    @include transition(.3s);
+    width: 70px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 6px 2px 10px 0px, rgba(0, 0, 0, 0.2) -6px -2px 10px 0px;
+    &:hover{
+      width: 220px;
+      .time{
+     
+   
+        opacity: 1;
+       
+    }
+    ul{
+      margin-left: calc(50% - 60px ); 
+    }
+      .toggle_text{
+        opacity: 1;
+      }
+ 
+    .logo{
+      margin: 0;
+    }  
+   }
+ 
+  }
+
+  svg.logo{
+font-size:2 * $m-font + 10px;
+margin-left: 35px;
+  }
+  .top_ul_info{
+    display: grid;
+    place-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-self: normal;
+    padding: 20px 0;
+    @include transition(.3s);
+
+   
+span{
+  font-size: $m-font - 2px;
+  background-color: $pry;
+  padding: 3px;
+  @include border-r(7px);
+
+}
+  }
+  .time{
+    @include transition(.3s);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      opacity: 0
+     
+  }
+  // .toggle_hide{
+  //   @include transition(.3s);
+  //   opacity: 0 !important;
+  // }
+  .fa-sort-down{
+    margin: -6px 0 0 5px;
+    font-size: $m-font - 5px;
+  }
+  ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  
+      margin-left: calc(50% - 30px ); 
+    
+
+    span{
+      margin: 0 15px;
+      
+      
+    }
+    span.toggle_text{
+      @include transition(.3s);
+   opacity: 0;
+    }
+
+  }
+  li{
+    margin: 8px 0;
+    padding: 15px 10px;
+  
+    @include transition(.2s);
+     border-left: double $h-color;
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.04);
+      border-left: double;
+      border-left: double $pry;
+    }
+ 
+    }
+    a{
+      cursor: pointer;
+      color: $p-color;
+      text-decoration: none;
+      text-transform: capitalize;
+      
+    }
+  svg{
+ font-size: $m-font + 5px;
+  }
+}
+
+
+.hide{
+  display: none !important;
+}
+
+  .body_section{
+    margin-left: 100px;
+.top_lang_info{
+  display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: rgba($p-color, .09);
+    /* start media for xx small screen*/
+    @media(max-width:400px){
+       margin: 10px auto ;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+}
+span{
+  color:rgba($p-color, .9);
+  text-transform: capitalize;
+  margin: 0 0 10px 0
+}
+.lang_content{
+ 
+  button{
+    @extend %button;
+    
+    border: 1px solid rgba($p-color, .2);
+    @include border-r(3px);
+   
+  }
+  .active{
+    background-color: $pry; 
+    
+    a{
+     color: $h-color !important; 
+    }
+  }
+  a{
+    color: $p-color !important;
+    text-transform: capitalize;
+    text-decoration: none;
+  }
+}
+.light_style{
+  height: 1px;
+
+  background-color: rgba($p-color, .02);
+}
+    .top_info{
+      position: relative;
+ display: flex;
+ justify-content: space-evenly;
+ padding: 20px;
+
+    }
+    h2{
+      font-size: $m-font + 3px;
+      text-transform: capitalize;
+          /* start media for xx small screen*/
+      @media(max-width:400px){
+        font-size: $m-font;
+      }
+    }
+    svg.fa-xmark{
+    position: absolute ;
+    right: 20px;
+    font-size: $m-font + 3px; 
+
+    cursor: pointer;
+    }
+    .input_content{
+
+    }
+    .row_top_input{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 40px 0 0 0;
+    /* start media for xx small screen 320 to 767px*/
+      @media(min-width:320px) and (max-width:767px){
+        display: block;
+      }
+    }
+    .row_bottom_input{
+      display: flex;
+      justify-content: flex-start; 
+      /* start media for xx small screen 320 to 767px*/
+      @media(min-width:320px) and (max-width:767px){
+        display: block;
+    
+      }               
+ 
+      margin: 30px 0 0 0;
+      .second{
+        margin: 0 0 0 40px ;
+        /* start media for xx small screen 320 to 767px*/
+        @media(min-width:320px) and (max-width:767px){
+          margin: 0 ;
+        }
+      }
+      fieldset{
+        width: 40%;
+      
+        /* start media for xx small screen 320 to 767px*/
+        @media(min-width:320px) and (max-width:767px){
+          width: 80%;
+        }
+      }
+    }
+    fieldset{
+      width: 50%;
+      /* start media for xx small screen 320 to 767px*/
+      @media(min-width:320px) and (max-width:767px){
+        width: 80%;
+      }
+    }
+    legend{
+      padding: 8px;
+    }
+    input.sub_inpu{
+   border: 2px solid transparent;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+      outline: none;
+      text-transform: capitalize;
+      /*add border color to input within focus or active*/
+      &:focus, &:active{
+        border: 2px  solid rgba($pry, .7);
+      }
+    }
+    .check_box{
+      display: flex;
+      align-items: center;
+      align-content: center;
+      margin: 0 0 0 40px;
+      text-transform: capitalize;
+      @media(min-width:320px) and (max-width:767px){
+        display: block;
+        margin: 10px auto;
+        font-size: $m-font - 5px; 
+    }
+
+    }
+    .radio{
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    .state{
+      margin: 0 10px 0 0;
+    }
+    input.submit_btn{
+      margin: 50px  0; 
+      padding: 10px 15px;
+      border: none;
+      background-color: rgba($pry, .7);
+      color: $h-color;
+      cursor: pointer;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      @include border-r(5px);
+      @include transition(.2s);
+      &:hover{
+        background-color: $pry;
+      }
+    }
+  }
+
+.previous_cycle{
+  h3{
+margin: 0 0 20px 0;
+  }
+  hr{
+    height: 1px;
+    margin: 20px 0;
+  }
+}
+  .tableFixHead {
+    overflow-y: auto; 
+    height: 200px; 
+    /* width: calc(100% - 70px); */
+  }
+  .tableFixHead thead th {
+    position: sticky;
+    top: 0px; 
+  }
+  table {
+    border-collapse: collapse; 
+    width: 100%;
+  }
+  th,
+  td {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+  }
+  th {
+    background: #eee;
+  }
+
+/* scroll to top button */
+.scroll_to_top {
+  position: fixed !important;
+  cursor: pointer;
+  opacity: 0;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10;
+  width: 40px; 
+    padding: 10px;
+  background: $pry;
+  display: grid; 
+  place-items: center;
+  @include border-r(50%);
+  @include transition(.3s);
+  border: 1px solid $h-color;
+ 
+  a {
+    
+    font-size: 17px;
+  }
+  svg{
+    color: #ffffff;
+  }
+}
+
