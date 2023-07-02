@@ -1,18 +1,19 @@
 
 
-
+// select all html items
 var en_lang = document.getElementById('en_lang')
 var ar_lang = document.getElementById('ar_lang')
-
+// add active class
+en_lang.classList.add('active')
  ar_lang.addEventListener('click', (e) => {
   e.preventDefault();
-  document.body.setAttribute('dir', 'rtl')
+  document.body.setAttribute('dir', 'rtl')     //setAttribute dir  to rtl
   document.body.style.direction= "rtl";
   ar_lang.classList.add('active')
   en_lang.classList.remove('active')
-  // window.location.href('../index.html')
 
 });
+//  en_language
 en_lang.addEventListener('click', (e) => {
   e.preventDefault();
   document.body.setAttribute('dir', 'ltr')
@@ -20,9 +21,6 @@ en_lang.addEventListener('click', (e) => {
   en_lang.classList.add('active')
   ar_lang.classList.remove('active')
 });
-
-
-
 
 
 

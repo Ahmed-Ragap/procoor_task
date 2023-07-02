@@ -71,52 +71,45 @@ scroll-behavior: smooth;
 height: 2000px; 
  }
 
-
-
-/*
-
-____________________________
-___________________________
-_______________________
-___________________\__________
-*/
-
-$dir: 'ltr';
-
-body{
-  @if $dir == "ltr"{
- 
-    .nav_container{
-background-color: red !important;
-    }
-   
-
-
-
-  } @else { 
-   
-    .nav_container{ 
-      right: 0!important;  
-       background-color: #427bff !important;
-     
-    }
-    ul{
-      justify-content: baseline!important;
-    }
-    svg.logo {
-      margin-left: -50px!important;
+ /*
+ --switch between arabic and english language [rtl]
+ --group all rtl style 
+ */
+body[dir='rtl'] {
+  .body_section{
+    margin-right: 100px;
+    
   }
-    svg.fa-xmark{
-  
-      left: 0!important;
- }
- .top_info {
-  flex-direction: row-reverse!important;
-  
+  fieldset.second{
+    margin-right: 40px !important ;
   }
-  }
+  .nav_container{ 
+  right: 0!important;   
+}
+svg.logo {
+  margin-left: -27px !important;
+}
 }
 
+
+ul{
+  justify-content: baseline!important;
+}
+svg.logo {
+  margin-left: 35px!important;
+}
+svg.fa-xmark{
+
+  left: 0!important;
+}
+.top_info {
+justify-content: space-around!important;
+
+}
+  body[dir='ltr'] .nav_container{ 
+    left: 0!important;  
+   
+  }
 /* start nav_Section style*/
 
 #nav_Section{

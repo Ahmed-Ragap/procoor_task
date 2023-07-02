@@ -49,14 +49,40 @@ body {
 }
 
 /*
-
-____________________________
-___________________________
-_______________________
-___________________\__________
+--switch between arabic and english language [rtl]
+--group all rtl style 
 */
-body .nav_container {
-  background-color: red !important;
+body[dir=rtl] .body_section {
+  margin-right: 100px;
+}
+body[dir=rtl] fieldset.second {
+  margin-right: 40px !important;
+}
+body[dir=rtl] .nav_container {
+  right: 0 !important;
+}
+body[dir=rtl] svg.logo {
+  margin-left: -27px !important;
+}
+
+ul {
+  justify-content: baseline !important;
+}
+
+svg.logo {
+  margin-left: 35px !important;
+}
+
+svg.fa-xmark {
+  left: 0 !important;
+}
+
+.top_info {
+  justify-content: space-around !important;
+}
+
+body[dir=ltr] .nav_container {
+  left: 0 !important;
 }
 
 /* start nav_Section style*/
